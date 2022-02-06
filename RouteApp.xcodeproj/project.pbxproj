@@ -14,6 +14,7 @@
 		EA60E63D27B07013005A3F03 /* RouteAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA60E63C27B07013005A3F03 /* RouteAppTests.swift */; };
 		EA60E64727B07013005A3F03 /* RouteAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA60E64627B07013005A3F03 /* RouteAppUITests.swift */; };
 		EA60E64927B07013005A3F03 /* RouteAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA60E64827B07013005A3F03 /* RouteAppUITestsLaunchTests.swift */; };
+		EA60E65627B083DC005A3F03 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA60E65527B083DC005A3F03 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		EA60E64227B07013005A3F03 /* RouteAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouteAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA60E64627B07013005A3F03 /* RouteAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAppUITests.swift; sourceTree = "<group>"; };
 		EA60E64827B07013005A3F03 /* RouteAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EA60E65527B083DC005A3F03 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				EA60E62527B07011005A3F03 /* AppDelegate.swift */,
 				EA60E62927B07011005A3F03 /* ViewController.swift */,
+				EA60E65527B083DC005A3F03 /* Alert.swift */,
 				EA60E62E27B07013005A3F03 /* Assets.xcassets */,
 				EA60E63027B07013005A3F03 /* LaunchScreen.storyboard */,
 				EA60E63327B07013005A3F03 /* Info.plist */,
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA60E65627B083DC005A3F03 /* Alert.swift in Sources */,
 				EA60E62A27B07011005A3F03 /* ViewController.swift in Sources */,
 				EA60E62627B07011005A3F03 /* AppDelegate.swift in Sources */,
 			);
@@ -439,7 +443,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -466,7 +470,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
