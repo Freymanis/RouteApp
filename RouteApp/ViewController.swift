@@ -41,6 +41,8 @@ class ViewController: UIViewController {
     }()
     
     
+    var annotationArray = [MKPointAnnotation]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,8 +54,8 @@ class ViewController: UIViewController {
     }
     
     @objc func addAddressButtonTapped() {
-        alertAddAddress(title: "Добавить", placeholder: "Введите адрес") { (text) in
-            print(text)
+        alertAddAddress(title: "Добавить", placeholder: "Введите адрес") { [self] (text) in
+            setupPlaceMark(addressPlace: text)
         }
         
 //        alertError(title: "Error", message: "Server unavalible")
@@ -67,6 +69,35 @@ class ViewController: UIViewController {
         print("TapReset")
     }
     
+    private func setupPlaceMark(addressPlace: String) {
+        
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString("Москва, Тверская улица, дом 13") { [self] placemarks, error in
+            if let error = error {
+                print(error)
+                alertError(title: "Ошибка", message: "Сервер недоступен. Попробуйте добавить адрес еще раз")
+                return
+            }
+            guard let placemarks = placemarks else { return }
+            let placemark = placemarks.first
+        
+        let annotation = MKPointAnnotation()
+            annotation.title = "\(addressPlace)"
+            guard let plamarkLocation = placemark?.location else { return }
+            annotation.coordinate = plamarkLocation.coordinate
+            
+            annotationArray.append(annotation)
+            
+            if annotationArray.count > 2 {
+                routeButton.isHidden = false
+                resetButton.isHidden = false
+            }
+            
+            
+            mapView.showAnnotations(annotationArray, animated: true)
+            
+        }
+    }
 }
 
 extension ViewController {
